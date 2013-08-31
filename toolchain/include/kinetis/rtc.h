@@ -1,13 +1,13 @@
 struct RTC {
         uint32_t tsr;
-        struct RTC_TPR {
+        struct RTC_TPR_t {
                 UNION_STRUCT_START(32);
                 uint32_t tpr      : 16;
                 uint32_t _rsvd0   : 16;
                 UNION_STRUCT_END;
         } tpr;
         uint32_t tar;
-        struct RTC_TCR {
+        struct RTC_TCR_t {
                 UNION_STRUCT_START(32);
                 uint32_t tcr      :  8;
                 uint32_t cir      :  8;
@@ -15,7 +15,7 @@ struct RTC {
                 uint32_t cic      :  8;
                 UNION_STRUCT_END;
         } tcr;
-        struct RTC_CR {
+        struct RTC_CR_t {
                 UNION_STRUCT_START(32);
                 uint32_t swr      :  1;
                 uint32_t wpe      :  1;
@@ -31,7 +31,7 @@ struct RTC {
                 uint32_t _rsvd1   : 18;
                 UNION_STRUCT_END;
         } cr;
-        struct RTC_SR {
+        struct RTC_SR_t {
                 UNION_STRUCT_START(32);
                 uint32_t tif      :  1;
                 uint32_t tof      :  1;
@@ -41,7 +41,7 @@ struct RTC {
                 uint32_t _rsvd1   : 27;
                 UNION_STRUCT_END;
         } sr;
-        struct RTC_LR {
+        struct RTC_LR_t {
                 UNION_STRUCT_START(32);
                 uint32_t _rsvd0   :  3;
                 uint32_t tcl      :  1;
@@ -51,7 +51,7 @@ struct RTC {
                 uint32_t _rsvd1   : 25;
                 UNION_STRUCT_END;
         } lr;
-        struct RTC_IER {
+        struct RTC_IER_t {
                 UNION_STRUCT_START(32);
                 uint32_t tiie     :  1;
                 uint32_t toie     :  1;
@@ -62,7 +62,7 @@ struct RTC {
                 UNION_STRUCT_END;
         } ier;
         uint32_t _pad0[(0x800 - 0x1C)/4 - 1];
-        struct RTC_WAR {
+        struct RTC_WAR_t {
                 UNION_STRUCT_START(32);
                 uint32_t tsrw     :  1;
                 uint32_t tprw     :  1;
@@ -75,7 +75,7 @@ struct RTC {
                 uint32_t _rsvd0   : 24;
                 UNION_STRUCT_END;
         } war;
-        struct RTC_RAR {
+        struct RTC_RAR_t {
                 UNION_STRUCT_START(32);
                 uint32_t tsrr     :  1;
                 uint32_t tprr     :  1;
